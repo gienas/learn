@@ -22,7 +22,7 @@ public class Main {
 		Character ch1 = 'v';
 		Character ch2 = 'v';
 		
-		if ( ch1==ch2) System.out.println(true);
+		if ( ch1==ch2) System.out.println(ch1==ch2);
 		System.out.println( 2+3*4);
 		Long x = 10L;
 		
