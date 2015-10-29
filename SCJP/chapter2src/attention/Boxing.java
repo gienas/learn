@@ -4,11 +4,15 @@ public class Boxing {
 	public static void main(String[] args) {
 	
 		int i = 1;
-		
-		Long l = 10l;
+		Short s = 1;
 		long l2 = 10l;
-		Short s = 2;
+		Long l = 10l;
+		System.out.println("call go(Short s = 1;)");
 		go(s);
+		System.out.println("call long l2 = 10l;)");
+		go(l2);
+		System.out.println("Long l = 10l;");
+		go(l);
 		System.gc();
 		short sh = 1;
 		
