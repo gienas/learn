@@ -1,5 +1,9 @@
 package enums;
-
+/**
+ * 
+ * @author eneugebauer
+ *
+ */
 enum Animals {
 
 	DOG("woof"), CAT("meow"), FISH("burble");
