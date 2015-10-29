@@ -10,7 +10,10 @@ import java.io.IOException;
 	public void go() throws IOException
 	{
 		//System.out.println(var);
-		System.out.println(new P1().var);
+		System.out.println(new P1().varprot);
+		System.out.println(new P1().varprot);
+		System.out.println(new P1().vardef);
+		System.out.println(varprot);
 	}
 
 	native public void goahed();
