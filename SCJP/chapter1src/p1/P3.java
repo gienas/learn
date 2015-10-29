@@ -9,7 +9,9 @@ package p1;
 	public void go() 
 	{
 		//System.out.println(var);
-		System.out.println(new P2().var);
+		System.out.println(new P2().varprot);
+		System.out.println(new P2().vardef);
+		System.out.println(new P2().varpub);
 	}
 
 	public static void main(String[] args) {
