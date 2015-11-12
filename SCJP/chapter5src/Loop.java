@@ -28,6 +28,15 @@ public class Loop {
 		myfor: for (int z = 1; z < 10; z++) {
 
 		}
+		
+		go(0);
 	}
 
+	public static void go(int x)
+	{
+		assert(x >= 0): "x<0";
+		if (x<=0) throw new IllegalArgumentException("x should by > 0");
+		
+	}
+	
 }

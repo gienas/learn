@@ -1,12 +1,5 @@
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.Console;
-import java.io.File;
-import java.io.FileWriter;
-import java.text.DateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
 import java.util.TimeZone;
 
 
@@ -16,6 +9,7 @@ public class Test {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		String str = new String("asd");
 		// TODO Auto-generated method stub
 //		Date d = new Date();
 

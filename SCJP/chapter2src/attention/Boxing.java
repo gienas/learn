@@ -19,6 +19,10 @@ public class Boxing {
 		int[] lvTabInt = {sh};
 		short[] lvTabShort = new short[2];
 		float aa = 2.3F;
+		
+		
+		Integer a = new Integer(1);
+		System.out.println(a);
 	}
 	
 	public static void go(Number i)
@@ -33,5 +37,10 @@ public class Boxing {
 	public static void go(Long l)
 	{
 		System.out.println("public static void go(long i)");
+	}
+	
+	public void change(Integer i)
+	{
+		i.parseInt("2");
 	}
 }
