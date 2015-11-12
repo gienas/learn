@@ -1,23 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>pl.ene</groupId>
-  <artifactId>course-jee7</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>course-jee7</name>
-  <modules>
-    <module>course-ear</module>
-    <module>course-web</module>
-    <module>course-business</module>
-    <module>course-model</module>
-    <module>course-integration</module>
-    <module>course-common</module>
-  </modules>
-  
-  <build>
-  	<plugins>
-  		<plugin>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>pl.ene</groupId>
+	<artifactId>course-jee7</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>course-jee7</name>
+	<modules>
+		<module>course-ear</module>
+		<module>course-web</module>
+		<module>course-business</module>
+		<module>course-model</module>
+		<module>course-integration</module>
+		<module>course-common</module>
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-web-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>7.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<!-- ***************************************************** -->
+
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>course-model</artifactId>
+				<version>${project.version}</version>
+	
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>course-business</artifactId>
+				<version>${project.version}</version>
+				<type>ejb</type>
+			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>course-common</artifactId>
+				<version>${project.version}</version>
+			
+			</dependency>
+		</dependencies>
+
+	</dependencyManagement>
+
+	<dependencies>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
 				<groupId>org.wildfly.plugins</groupId>
 				<artifactId>wildfly-maven-plugin</artifactId>
 				<version>1.0.0.Final</version>
@@ -25,6 +67,6 @@
 					<skip>true</skip>
 				</configuration>
 			</plugin>
-  	</plugins>
-  </build>
+		</plugins>
+	</build>
 </project>
