@@ -14,4 +14,17 @@
     <module>course-integration</module>
     <module>course-common</module>
   </modules>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.0.0.Final</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+  	</plugins>
+  </build>
 </project>

@@ -19,14 +19,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencies>
-		
+
 		<dependency>
 			<groupId>pl.ene</groupId>
 			<artifactId>course-business</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>pl.ene</groupId>
 			<artifactId>course-common</artifactId>
@@ -38,21 +38,21 @@
 			<artifactId>course-model</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-				
+
 		<dependency>
 			<groupId>pl.ene</groupId>
 			<artifactId>course-web</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
-				
+
 		<dependency>
 			<groupId>pl.ene</groupId>
 			<artifactId>course-integration</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
-		</dependency> 
-		
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -91,6 +91,30 @@
 						</ejbModule>
 					</modules>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.0.0.Final</version>
+				<configuration>
+					<hostname>localhost</hostname>
+					<port>9990</port>
+					<username>admin</username>
+					<password>admin123</password>
+					<!--  
+					<targetDir>./course-ear/target</targetDir>
+					<filename>course-ear-0.0.1-SNAPSHOT.ear</filename>
+					-->
+					 <skip>false</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<!-- <phase>package</phase> -->
+						<!-- <goals> -->
+						<!-- <goal>deploy</goal> -->
+						<!-- </goals> -->
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
