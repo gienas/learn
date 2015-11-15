@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<head>
+<title>Start Page</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">
+	function go(format) {
+		var xmlhttp = new XMLHttpRequest();
+		var urljson = "http://localhost:8080/course-web/rest/orders/json";
+		var urlxml = "http://localhost:8080/course-web/rest/orders/xml";
+		var url = urlxml;
+		
+		if (format=='json')
+		{
+			url=urljson;
+		}	
+		
+		xmlhttp.onreadystatechange = function() {
+		    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		        //var myArr = JSON.parse(xmlhttp.responseText);
+		        document.getElementById("return").value = xmlhttp.responseText;
+		    }
+		};
+		xmlhttp.open("GET", url, true);
+		//xmlhttp.setRequestHeader("Content-Type","application/eneformat")
+		xmlhttp.send();
+		
+	}
+</script>
+</head>
+<!-- MediaType.APPLICATION_FORM_URLENCODED -->
+<body>
+	<h1>Hello World!</h1>
+	<form id="f1" action="rest/orders/create" method="post" enctype="application/eneformat">
+		id: name:<input name="id" /></br> name:<input name="name" /></br> <input
+			type="submit" value="Wyślij">
+	</form>
+	<button onclick="go('json')">call rest with json return</button>
+	<button onclick="go('xml')">call rest with xml return</button>
+	<textarea rows="100" cols="200" id="return"></textarea>
+</body>
 </html>
