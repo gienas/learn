@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+   
+  <script type="text/javascript">
+    var ws = new WebSocket("ws://localhost:8080/course-web/clock"); 
+        
+    ws.onmessage = function(event) {
+      var mySpan = document.getElementById("messageGoesHere");
+      mySpan.innerHTML=event.data; 
+    };
+     
+    ws.onerror = function(event){
+        console.log("Error ", event)
+    }  
+   
+    function go() {
+    	alert("Update prefix call");
+		ws.send(document.getElementById("prefix").value);
+	}
+</script>
+
+</body>
+	<form name="f1">
+	<span id="messageGoesHere"></span> <br/>
+	<input name="prefix" id="prefix" type="text" />
+	<button name="update" type="button" onclick="go()">update prefix</button>
+	</form>
+</html>
+
