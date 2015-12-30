@@ -1,0 +1,18 @@
+www.oxfordenglishtesting.com<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Really simple CRUD</title>
+</h:head>
+<h:body>
+	<h:form>
+		<p>
+			<h:inputTextarea rows="5" cols="25" value="#{testStatefullBean.all}" />
+			<br/> 
+			<h:inputText value="#{testStatefullBean.name}" /> 
+			<h:commandButton value="test static EJB" action="#{testStatefullBean.onclick}" />
+		</p>
+	</h:form>
+</h:body>
+</html>

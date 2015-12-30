@@ -3,6 +3,7 @@ package pl.ene.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DefaultValue;
 import javax.ws.rs.FormParam;
@@ -22,9 +23,9 @@ import pl.ene.common.rest.ServerLogged;
 import pl.ene.model.rest.Order;
 import pl.ene.model.rest.Orders;
 
+@Stateless
 @Path("/orders")
-
-public class OrderEntryService {
+public class OrderEntryService implements OrderEntrySoap {
 	
 	private Logger LOG = LoggerFactory.getLogger(OrderEntryService.class);
 	
