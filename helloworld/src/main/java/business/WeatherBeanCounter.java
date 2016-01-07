@@ -22,7 +22,7 @@ public class WeatherBeanCounter {
 		System.out.println(" -- Container substracted bean, current we have " + count);
 	}
 	
-	@Schedule(month="*", dayOfMonth="*", dayOfWeek="*",hour="*", minute="*", second="0/15")
+	@Schedule(month="*", dayOfMonth="*", dayOfWeek="*",hour="*", minute="*", second="0")
 	public void showCurrentBeanNumber()
 	{
 		System.out.println(" -- Current number of weather beans " + count);

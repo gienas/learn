@@ -13,7 +13,7 @@ import business.WeatherServiceLocal;
 import domain.Place;
 import domain.Weather;
 
-@Stateless
+//@Stateless
 @Path("/weather")
 public class WeatherRestService {
 
