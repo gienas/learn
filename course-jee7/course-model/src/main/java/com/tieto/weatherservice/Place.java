@@ -56,6 +56,10 @@ public class Place {
 			return false;
 		return true;
 	}
+	@Override
+	public String toString() {
+		return "Place [id=" + id + ", name=" + name + "]";
+	}
 	
 	
 }

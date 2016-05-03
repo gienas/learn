@@ -35,21 +35,21 @@ public class WeatherCacheEntity {
 	{
 		if ( saveDate == null)
 			return null;
-		
-		
 		Calendar calEnt = Calendar.getInstance();
 		calEnt.setTime(saveDate);
 		calEnt.add(Calendar.MINUTE, minuts);
-		
 		Calendar curr = Calendar.getInstance();
-		
-//		System.out.println("cal " + calEnt.getTime());
-//		System.out.println(" " + calEnt.getTime());
-		
 		boolean stale = calEnt.getTime().before( curr.getTime());
 		System.out.println("Check if stale ("+minuts+") result = " + stale );
 		return !stale;
 		
 	}
+	
+	@Override
+	public String toString() {
+		return "WeatherCacheEntity [weather=" + weather + ", saveDate=" + saveDate + "]";
+	}
+	
+	
 	
 }

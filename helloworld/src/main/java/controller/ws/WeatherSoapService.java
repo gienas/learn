@@ -10,7 +10,7 @@ import business.WeatherServiceLocal;
 import domain.Place;
 import domain.Weather;
 
-//@Stateless
+@Stateless
 @WebService
 @Interceptors({TestInterceptor.class})
 public class WeatherSoapService {

@@ -25,5 +25,11 @@ public class Weather {
 	public void setTemperature(Integer temperature) {
 		this.temperature = temperature;
 	}
+
+	@Override
+	public String toString() {
+		return "Weather [temperature=" + temperature + "]";
+	}
+	
 	
 }
