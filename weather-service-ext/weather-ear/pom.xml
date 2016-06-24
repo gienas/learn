@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>weather-service</artifactId>
+		<groupId>pl.ene</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>weather-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>weather-ear</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>weather-domain</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>weather-business</artifactId>
+			<type>ejb</type>
+		</dependency>
+				
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>weather-endpoint</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>weather-gui</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>weather-connectors</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>weather-connectors-wundergrund</artifactId>
+			<type>ejb</type>
+		</dependency>
+		
+<!--
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>course-integration</artifactId>
+			<version>${project.version}</version>
+			<type>war</type>
+		</dependency>
+		-->
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<version>6</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<skinnyWars>true</skinnyWars>
+					<modules>
+						<webModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>weather-endpoint</artifactId>
+							<contextRoot>/weather-endpoint</contextRoot>
+						</webModule>
+						<webModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>weather-gui</artifactId>
+							<contextRoot>/weather-gui</contextRoot>
+						</webModule>	
+						<ejbModule>
+							<groupId>pl.ene</groupId>
+							<artifactId>weather-business</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>pl.ene</groupId>
+							<artifactId>weather-connectors</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>pl.ene</groupId>
+							<artifactId>weather-connectors-wundergrund</artifactId>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.wildfly.plugins</groupId>
+				<artifactId>wildfly-maven-plugin</artifactId>
+				<version>1.0.0.Final</version>
+				<configuration>
+					<hostname>localhost</hostname>
+					<port>9990</port>
+					<username>admin</username>
+					<password>admin123</password>
+					<!-- <targetDir>./course-ear/target</targetDir> <filename>course-ear-0.0.1-SNAPSHOT.ear</filename> -->
+					<skip>false</skip>
+				</configuration>
+				<executions>
+					<execution>
+						<!-- <phase>package</phase> -->
+						<!-- <goals> -->
+						<!-- <goal>deploy</goal> -->
+						<!-- </goals> -->
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
