@@ -13,7 +13,7 @@ import pl.ene.weather.exception.ServerException;
 @Dependent
 public class WeatherServiceConnectorWunderground implements WeatherProviderConnector {
 
-    private static final String CONNECTOR_URL_TEMPLATE = "http://api.wunderground.com/api/CHANGEIT/conditions/q/#COUNTRY#/#CITY#.json";
+    private static final String CONNECTOR_URL_TEMPLATE = "http://api.wunderground.com/api/d1656297567e40cf/conditions/q/#COUNTRY#/#CITY#.json";
 
     @Inject
     private WundergroundClient client;
