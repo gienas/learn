@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+<h:head>
+	<title>Notes</title>
+
+</h:head>
+<h:body>
+	<h1> My notes </h1>
+	<h2>Add new note</h2>
+	<h:form id="f1">
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Note" />
+			<h:inputTextarea id="note" value="#{noteController.note}" cols="100" rows="" />
+			<h:commandButton actionListener="#{noteController.addNote()}" value="Add Note">
+				<f:ajax execute="note" render="note-table" />
+			</h:commandButton>
+		</h:panelGrid>
+	
+	<h2>My notes</h2>
+	<h:dataTable id="note-table" value="#{noteController.allNotes}" var="n" width="50%">
+		<h:column>
+    				<h:panelGroup >
+    				#{n.toString()}
+    				</h:panelGroup>
+    				<hr/>
+    	</h:column>
+	</h:dataTable>
+	</h:form>
+
+</h:body>
+</html>
