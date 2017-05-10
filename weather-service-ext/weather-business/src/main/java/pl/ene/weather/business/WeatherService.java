@@ -17,6 +17,11 @@ import pl.ene.weather.domain.WeatherDO;
 import pl.ene.weather.exception.ClientException;
 import pl.ene.weather.exception.ServerException;
 
+/**
+ * 
+ * @author neugeeug
+ *
+ */
 @Dependent
 public class WeatherService implements WeatherServiceLocal {
 
