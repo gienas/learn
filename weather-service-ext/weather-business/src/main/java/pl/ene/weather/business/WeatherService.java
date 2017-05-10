@@ -18,7 +18,7 @@ import pl.ene.weather.exception.ClientException;
 import pl.ene.weather.exception.ServerException;
 
 /**
- * 
+ * This class
  * @author neugeeug
  *
  */
